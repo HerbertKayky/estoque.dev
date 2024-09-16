@@ -1,11 +1,22 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
 const prismaClient = new PrismaClient();
 
 export async function POST(request: Request) {
   const { nome, descricao, preco, quantidade, categoria } =
     await request.json();
+
+  const session = await getServerSession(authOptions);
+
+  if (!session || !session.user) {
+    return NextResponse.json(
+      { error: "Usuário não autenticado" },
+      { status: 401 }
+    );
+  }
 
   try {
     await prismaClient.produto.create({
@@ -15,6 +26,7 @@ export async function POST(request: Request) {
         preco,
         quantidade,
         categoria,
+        userId: session.user.id,
       },
     });
 

@@ -16,6 +16,8 @@ model Produto {
   categoria  String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+  userId     String   @db.ObjectId
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model User {
@@ -26,6 +28,8 @@ model User {
   image          String?
   accounts       Account[]
   sessions       Session[]
+
+  Produto Produto[]
 }
 
 model Account {
