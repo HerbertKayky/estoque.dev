@@ -62,7 +62,7 @@ export function Buttons({ produto }: ProdutoProps) {
 
   return (
     <>
-      <tr className="flex items-center justify-center gap-3 mt-1">
+      <div className="flex items-center justify-center gap-3 mt-1">
         <button
           onClick={() => setIsModalOpen(true)}
           className="text-white font-medium bg-blue-600 p-1 rounded-md"
@@ -75,7 +75,7 @@ export function Buttons({ produto }: ProdutoProps) {
         >
           Excluir
         </button>
-      </tr>
+      </div>
 
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">

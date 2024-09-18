@@ -15,16 +15,18 @@ export default async function Estoque() {
       userId: session.user.id,
     },
   });
-  
 
   return (
     <div className="flex flex-col w-full max-w-5xl mx-auto mt-4">
       <div>
-      <Link className=" ml-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700 transition" href="/cadastro">
-      Cadastrar produto +
-      </Link>
+        <Link
+          className=" ml-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700 transition"
+          href="/cadastro"
+        >
+          Cadastrar produto +
+        </Link>
       </div>
-      
+
       <table className="w-full text-left table-auto mt-3">
         <thead>
           <tr>
@@ -45,7 +47,9 @@ export default async function Estoque() {
               <td className="px-4 py-2 text-white">
                 {new Date(produto.createdAt).toLocaleDateString("pt-BR")}
               </td>
-              <Buttons produto={produto} />
+              <td className="px-4 py-2">
+                <Buttons produto={produto} />
+              </td>
             </tr>
           ))}
         </tbody>
