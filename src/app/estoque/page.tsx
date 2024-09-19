@@ -30,21 +30,19 @@ export default async function Estoque() {
       <table className="w-full text-left table-auto mt-3">
         <thead>
           <tr>
-            <th className="px-4 py-2 text-white">Nome</th>
-            <th className="px-4 py-2 text-white">Preço</th>
-            <th className="px-4 py-2 text-white">Quantidade</th>
-            <th className="px-4 py-2 text-white">Criado em</th>
+            <th className="px-4 py-2">Nome</th>
+            <th className="px-4 py-2">Preço</th>
+            <th className="px-4 py-2">Quantidade</th>
+            <th className="px-4 py-2">Criado em</th>
           </tr>
         </thead>
         <tbody>
           {produtos.map((produto) => (
             <tr key={produto.id} className="border-t border-gray-600">
-              <td className="px-4 py-2 text-white">{produto.nome}</td>
-              <td className="px-4 py-2 text-white">
-                R$ {produto.preco.toFixed(2)}
-              </td>
-              <td className="px-4 py-2 text-white">{produto.quantidade}</td>
-              <td className="px-4 py-2 text-white">
+              <td className="px-4 py-2">{produto.nome}</td>
+              <td className="px-4 py-2">R$ {produto.preco.toFixed(2)}</td>
+              <td className="px-4 py-2">{produto.quantidade}</td>
+              <td className="px-4 py-2 ">
                 {new Date(produto.createdAt).toLocaleDateString("pt-BR")}
               </td>
               <td className="px-4 py-2">

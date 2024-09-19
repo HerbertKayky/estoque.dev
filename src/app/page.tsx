@@ -19,7 +19,7 @@ export default async function Home() {
             priority={true}
           />
         </div>
-        <h1 className="font-bold text-2xl sm:text-3xl text-white text-center mt-8 leading-10">
+        <h1 className="font-bold text-2xl sm:text-3xl text-center mt-8 leading-10">
           Sistema feito para você organizar
           <br /> seu estoque
         </h1>
