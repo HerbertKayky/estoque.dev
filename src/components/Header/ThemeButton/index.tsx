@@ -28,6 +28,7 @@ export function ThemeButton() {
     return (
       <FiMoon
         className="cursor-pointer"
+        color="#FFF"
         size={25}
         onClick={() => setTheme("dark")}
       />
