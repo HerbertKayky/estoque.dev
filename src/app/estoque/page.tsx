@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import prismaClient from "@/lib/prisma";
 import { Buttons } from "@/components/buttons";
 import Link from "next/link";
+import RegisterButton from "@/components/RegisterButton";
 
 export default async function Estoque() {
   const session = await getServerSession(authOptions);
@@ -18,13 +19,14 @@ export default async function Estoque() {
 
   return (
     <div className="flex flex-col w-full max-w-5xl mx-auto mt-4">
-      <div>
+      <div className="flex gap-5">
         <Link
           className=" ml-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700 transition"
           href="/cadastro"
         >
           Cadastrar produto +
         </Link>
+        <RegisterButton />
       </div>
 
       <table className="w-full text-left table-auto mt-3">
